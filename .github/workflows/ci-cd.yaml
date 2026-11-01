@@ -1,4 +1,4 @@
-name: Task App
+name: Task App Backend CI/CD
 
 on:
   push:
