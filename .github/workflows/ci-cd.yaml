@@ -41,7 +41,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
-      # - name: Deploy to Render
-      #   run: |
-      #     IMG="docker.io%2F${{ secrets.DOCKERHUB_USERNAME }}%2F${{ env.IMAGE_NAME }}%3A${{ github.sha }}"
-      #     curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}&imgURL=$IMG"
+      - name: Deploy to Render
+        run: |
+          IMG="docker.io%2F${{ secrets.DOCKERHUB_USERNAME }}%2F${{ env.IMAGE_NAME }}%3A${{ github.sha }}"
+          curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}&imgURL=$IMG"
